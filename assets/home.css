@@ -57,3 +57,12 @@ h1{font-size:clamp(24px,2.2vw,33px);letter-spacing:-.9px}
 .contacts a:hover{transform:translateY(-2px)}
 }
 @media(prefers-reduced-motion:reduce){.navigation a:after{transition:none}}
+
+/* Separate appointments from their supporting affiliations. */
+.sidebar-roles{line-height:1.4}
+.position-group{margin-bottom:24px}
+.position-title{display:block;font-weight:600}
+.position-detail{font-size:.8em;margin-top:6px;font-weight:400}
+.position-university{font-size:.8em;font-weight:400}
+@media(min-width:701px) and (max-height:700px){.portrait{width:min(100%,24svh)}.position-group{margin-bottom:18px}}
+@media(max-width:700px){.position-group{margin-bottom:18px}.sidebar-roles{font-size:16px}.position-detail,.position-university{font-size:14px}}
