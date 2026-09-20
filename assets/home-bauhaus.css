@@ -28,3 +28,28 @@
 @media(min-width:1450px){.page{grid-template-columns:390px minmax(0,1fr)}}
 @media(min-width:701px) and (max-width:1100px){.page{grid-template-columns:330px minmax(0,1fr)}.identity h1{font-size:29px}.content{padding-left:22px;padding-right:22px}.navigation{gap:5px}}
 @media(max-width:700px){.sidebar-contacts{margin-top:12px;padding-top:20px}}
+
+/* Short entrance animations keep the academic text easy to read. */
+@media(prefers-reduced-motion:no-preference){
+ @keyframes soft-arrival{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+ @keyframes shape-arrival{from{opacity:0;transform:rotate(-90deg) scale(.7)}to{opacity:1;transform:rotate(0) scale(1)}}
+ .portrait{animation:soft-arrival .65s ease-out both}
+ .identity{animation:soft-arrival .6s ease-out .08s both}
+ .sidebar-contacts{animation:soft-arrival .6s ease-out .16s both}
+ .intro{animation:soft-arrival .65s ease-out .12s both}
+ .profile::before{animation:shape-arrival .8s ease-out .15s both}
+ .research-focus{animation:soft-arrival .65s ease-out .22s both}
+ .focus-keywords li{animation:soft-arrival .5s ease-out both}
+ .focus-keywords li:nth-child(1){animation-delay:.30s}
+ .focus-keywords li:nth-child(2){animation-delay:.38s}
+ .focus-keywords li:nth-child(3){animation-delay:.46s}
+ .focus-keywords li:nth-child(4){animation-delay:.54s}
+ .sidebar-contacts a,.navigation a,.search-toggle{transition:color .18s ease,background-color .18s ease,translate .18s ease}
+ .sidebar-contacts a:hover,.sidebar-contacts a:focus-visible{translate:3px 0}
+ .search-toggle:hover,.search-toggle:focus-visible{background:var(--sage)}
+ .focus-keywords li{transition:background-color .25s ease}
+ .focus-keywords li:hover{background:#f0f6f1}
+ .focus-keywords li::before{transition:transform .3s ease}
+ .focus-keywords li:hover::before{transform:rotate(90deg) scale(1.2)}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
