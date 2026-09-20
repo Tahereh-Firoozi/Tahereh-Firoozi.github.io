@@ -19,3 +19,8 @@ body{font-family:var(--site-font);background:white}h1,h2,h3{font-family:var(--si
 /* Text links use the site's deep green without underlines. */
 a{color:var(--accent);text-decoration:none}
 a:hover,.text-link:hover,.jump-links a:hover{text-decoration:none}
+
+/* Work history follows the education timeline. */
+.work-experience{margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+.work-experience h2.eyebrow{font-size:10px;letter-spacing:.12em;font-weight:500}
+.work-experience .timeline p+p{margin-top:8px}
