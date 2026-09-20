@@ -53,3 +53,6 @@
  .focus-keywords li:hover::before{transform:rotate(90deg) scale(1.2)}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Match Biosketch biography typography at every screen size. */
+.intro{font-family:var(--site-font);font-size:16px;font-weight:400;color:#292929;letter-spacing:0}
