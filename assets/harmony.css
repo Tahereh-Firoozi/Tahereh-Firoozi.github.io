@@ -15,3 +15,7 @@ body{font-family:var(--site-font);background:white}h1,h2,h3{font-family:var(--si
 @media(max-width:390px){.grant-row{grid-template-columns:1fr}.grant-amount{grid-column:1;padding-top:0}.brand-name{font-size:14px}.contact-email{font-size:17px}.page-intro h1{font-size:32px}}
 @media(prefers-reduced-motion:no-preference){@keyframes page-arrive{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.page-intro{animation:page-arrive .5s ease-out both}.main-nav a,.text-link,.button{transition:color .18s ease,background-color .18s ease}.course-card{transition:border-color .2s ease}.course-card:hover{border-right-color:var(--accent);border-bottom-color:var(--accent);border-left-color:var(--accent)}}
 @media print{.page-intro{background:white;border:0;padding:0;margin:0 0 24px}.page-intro::after{display:none}.bio-aside,.contact-primary{background:white;border:1px solid #ccc}.contact-primary h2,.contact-primary .eyebrow,.contact-primary .muted,.contact-primary a,.contact-help{color:#000}.year-group{grid-template-columns:75px 1fr}.manuscripts-section .record{margin-left:90px}}
+
+/* Text links use the site's deep green without underlines. */
+a{color:var(--accent);text-decoration:none}
+a:hover,.text-link:hover,.jump-links a:hover{text-decoration:none}
