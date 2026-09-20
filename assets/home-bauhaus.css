@@ -3,7 +3,7 @@
 .page{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100svh;border-top:8px solid var(--green)}
 .profile{position:relative;display:flex;flex-direction:column;background:var(--sage);padding:28px 30px 25px;border-right:1px solid var(--line)}
 .profile::before{content:'';position:absolute;top:0;right:0;width:38px;height:38px;background:var(--gold)}
-.portrait{display:block;width:min(100%,24svh,185px);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;margin:0 auto 22px}
+.portrait{display:block;width:min(100%,24svh,185px);height:auto;aspect-ratio:1;object-fit:cover;border-radius:0;margin:0 auto 22px}
 .identity h1{font-size:32px;line-height:1.03;letter-spacing:-1.25px;font-weight:600;margin:0 0 25px;color:var(--green)}
 .sidebar-roles{font-size:16px;line-height:1.4}.position-group{margin-bottom:19px}.position-title{display:block;font-size:16px;font-weight:600}.position-detail{font-size:13px;margin-top:5px}.position-university{font-size:13px;margin-top:23px}.position-location{font-size:12px!important;margin-top:7px!important}
 .sidebar-contacts{display:flex;flex-direction:column;gap:11px;margin-top:22px;padding-top:18px;border-top:1px solid #adc6b5}.sidebar-contacts a{display:flex;align-items:center;gap:11px;width:fit-content;text-decoration:none;font-size:13px}.sidebar-contacts a:hover{text-decoration:none}.sidebar-contacts img{width:15px;height:15px}
