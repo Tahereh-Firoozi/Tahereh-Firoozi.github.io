@@ -25,3 +25,35 @@ h1{font-size:clamp(23px,2.05vw,30px);margin-bottom:16px}
 .search-panel{position:absolute;z-index:5;left:calc(26.8% + 24px);right:24px;max-height:65svh;overflow:auto;background:white;padding:20px;box-shadow:0 8px 24px #0002}
 }
 @media(min-width:701px) and (max-height:650px){.profile{padding-top:20px}.identity{margin-top:18px;padding-top:18px}.intro{padding-top:24px;font-size:16px}.intro p{margin-bottom:18px}.positions{font-size:16px}.header,.navigation{min-height:54px}}
+
+/* Quiet interactive details and a clearer academic type hierarchy. */
+.navigation a{padding-inline:5px;border-radius:6px 6px 0 0}
+.navigation a:hover,.navigation a:focus-visible{background:var(--sage);text-decoration:none;color:var(--accent)}
+.navigation a:not([aria-current]):after{content:'';position:absolute;bottom:0;left:5px;right:5px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+.navigation a:hover:after,.navigation a:focus-visible:after{transform:scaleX(1)}
+.intro-lead{font-size:1.15em;line-height:1.45;letter-spacing:-.4px}
+.intro-lead strong{font-weight:600}
+.bio-link{font-weight:600;text-decoration:underline;text-decoration-color:#a8beb1;text-underline-offset:4px;text-decoration-thickness:1px}
+.bio-link:hover,.bio-link:focus-visible{color:var(--accent);text-decoration-color:var(--accent);background:var(--sage)}
+.contacts a{padding:7px 12px;border-radius:7px}
+.contacts a:hover,.contacts a:focus-visible{background:#d5e9de;text-decoration:none;color:#183d26}
+.search-toggle{border-radius:50%}.search-toggle:hover{background:var(--sage)}
+.identity{border-top:0;padding-top:0}
+.positions{font-weight:500}.positions span:last-child{margin-top:14px;font-size:.86em;font-weight:400}
+@media(min-width:701px){
+.header{gap:12px}.navigation{gap:clamp(6px,1vw,16px)}
+.intro{font-size:clamp(18px,min(1.54vw,2.85vh),22px);max-width:1050px;padding-top:clamp(32px,7vh,64px);line-height:1.52}
+.intro p{margin-bottom:clamp(22px,4vh,36px)}
+h1{font-size:clamp(24px,2.2vw,33px);letter-spacing:-.9px}
+.positions{font-size:clamp(16px,1.38vw,21px)}
+.contacts{padding:7px 24px}
+}
+@media(min-width:701px) and (max-height:650px){.intro{font-size:17px;padding-top:24px;line-height:1.45}.intro-lead{font-size:1.1em}.intro p{margin-bottom:20px}.positions{font-size:16px}}
+@media(max-width:700px){.intro{font-size:18px;line-height:1.6}.intro-lead{font-size:20px}.positions span:last-child{margin-top:7px}.contacts a{padding:6px 0}.navigation a{padding-inline:10px}}
+@media(prefers-reduced-motion:no-preference){
+@keyframes arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.intro{animation:arrive .45s ease-out both}
+.contacts a,.search-toggle,.bio-link,.navigation a{transition:background-color .18s ease,color .18s ease,transform .18s ease}
+.contacts a:hover{transform:translateY(-2px)}
+}
+@media(prefers-reduced-motion:reduce){.navigation a:after{transition:none}}
