@@ -71,3 +71,15 @@
  .intro{grid-row:2}
  .research-focus{grid-row:3;margin-top:0}
 }
+
+/* Unified sidebar color and aligned contact separator/heading. */
+.profile{color:var(--green)}
+@media(min-width:701px){
+ .page{--focus-label-height:44px}
+ .research-focus{grid-template-rows:var(--focus-label-height) 1fr}
+ .focus-label{line-height:14px}
+ .sidebar-contacts{border-top:1px solid #adc6b5;padding-top:var(--focus-label-height)}
+}
+@media(min-width:701px) and (max-height:740px){
+ .page{--focus-label-height:40px}
+}
