@@ -1,0 +1,6 @@
+/* One typeface for all website text. Edit this variable to change every page. */
+:root{--site-font:Aptos,Arial,sans-serif}
+html body,body *,body *::before,body *::after{
+ font-family:var(--site-font)!important;
+}
+body{-webkit-font-smoothing:antialiased}
