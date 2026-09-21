@@ -55,7 +55,10 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 /* Match Biosketch biography typography at every screen size. */
-.intro{font-family:var(--site-font);font-size:16px;font-weight:400;color:#292929;letter-spacing:0}
+.intro{font-family:var(--site-font);font-size:16px;font-weight:400;color:var(--ink);letter-spacing:0;-webkit-font-smoothing:antialiased}
+.intro p{font-size:16px;font-weight:400;line-height:1.85;letter-spacing:0;color:var(--ink);margin-bottom:24px}
+.intro p:last-child{margin-bottom:0}
+@media(max-width:760px){.intro p{line-height:1.8}}
 
 /* Align contacts with the research panel using shared desktop grid rows. */
 .position-university{font-weight:700;color:var(--green)}
