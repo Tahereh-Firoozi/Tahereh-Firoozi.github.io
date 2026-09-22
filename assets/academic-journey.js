@@ -1,9 +1,9 @@
 (()=>{
-
-const image=new Image();
-const c=document.getElementById('journey-art'),ctx=c.getContext('2d'),play=document.getElementById('journey-play'),seek=document.getElementById('journey-seek'),time=document.getElementById('journey-time');
-// Rectangles reveal source pixels without redrawing or changing academic content.
-// x,y,width,height,start,duration,mode (0=fade,1=left-to-right drawing)
+const c=document.getElementById('journey-art');
+if(!c)return;
+const ctx=c.getContext('2d'),section=c.closest('.academic-journey');
+if(!ctx)return;
+const image=new Image(),reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const parts=[
 [35,250,315,65,0,1,0],[35,310,132,125,0,1.2,0],
 [166,330,386,182,1,2,1],
@@ -16,13 +16,26 @@ const parts=[
 [1002,481,460,65,11.5,2,1],
 [1160,370,305,78,13,1,0],[1160,570,310,77,14,1,0],
 [1462,475,74,73,15,2,1]];
-let t=0,running=!matchMedia('(prefers-reduced-motion: reduce)').matches,last=0;
-if(!running)t=18;
-function draw(){ctx.setTransform(1,0,0,1,0,-235);ctx.fillStyle='#fff';ctx.fillRect(0,235,1536,570);if(t>=17.1){ctx.drawImage(image,0,0,1536,1024)}else for(const [x,y,w,h,start,dur,mode] of parts){let f=Math.max(0,Math.min(1,(t-start)/dur));if(!f)continue;ctx.save();ctx.beginPath();ctx.rect(x,y,mode?w*f:w,h);ctx.clip();ctx.globalAlpha=mode?1:f;ctx.drawImage(image,0,0,1536,1024);ctx.restore()}seek.value=t;time.textContent=Math.floor(t)+' / 18 s';play.textContent=running?'Pause':t>=18?'Play again':'Play'}
-function frame(now){if(last&&running)t=Math.min(18,t+(now-last)/1000);last=now;if(t>=18)running=false;draw();if(running)requestAnimationFrame(frame)}
-image.onload=()=>{c.hidden=false;document.querySelector('.journey-controls').hidden=false;document.querySelector('.academic-journey').classList.add('is-ready');draw();if(running)requestAnimationFrame(frame)};
-play.onclick=()=>{if(t>=18)t=0;running=!running;last=0;if(running)requestAnimationFrame(frame);else draw()};document.getElementById('journey-replay').onclick=()=>{t=0;const wasRunning=running;running=true;last=0;if(!wasRunning)requestAnimationFrame(frame)};seek.oninput=()=>{t=Number(seek.value);last=0;draw()};document.addEventListener('visibilitychange',()=>{last=0});
-
+let t=0,last=0,started=false,raf=0;
+function draw(){
+ctx.setTransform(1,0,0,1,0,-235);ctx.clearRect(0,235,1536,570);
+if(t>=17.1){ctx.drawImage(image,0,0,1536,1024);return}
+for(const [x,y,w,h,start,dur,mode] of parts){
+const f=Math.max(0,Math.min(1,(t-start)/dur));if(!f)continue;
+ctx.save();ctx.beginPath();ctx.rect(x,y,mode?w*f:w,h);ctx.clip();ctx.globalAlpha=mode?1:f;ctx.drawImage(image,0,0,1536,1024);ctx.restore();
+}}
+function frame(now){
+if(last)t=Math.min(18,t+(now-last)/1000);
+last=now;draw();if(t<18)raf=requestAnimationFrame(frame);
+}
+function start(){if(started)return;started=true;raf=requestAnimationFrame(frame)}
+image.onload=()=>{
+c.hidden=false;section.classList.add('is-ready');
+if(reduce.matches){t=18;draw();return}
+draw();
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){start();observer.disconnect()}},{threshold:.25});observer.observe(section)}else start();
+};
+reduce.addEventListener('change',()=>{if(reduce.matches){cancelAnimationFrame(raf);t=18;if(image.complete)draw()}});
+document.addEventListener('visibilitychange',()=>{last=0});
 image.src='assets/academic-journey.webp';
-
 })();

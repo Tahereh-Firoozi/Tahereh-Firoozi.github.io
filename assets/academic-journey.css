@@ -1,4 +1,9 @@
 .journey-heading{margin:32px 0 12px}.journey-heading h1{font-size:36px;line-height:1.15;color:var(--green);margin:0}.journey-heading p{font-size:16px;line-height:1.6;margin:12px 0 0;color:var(--ink)}
-.academic-journey{margin:0 0 40px;border-bottom:1px solid var(--green);padding-bottom:16px}.journey-scroll{overflow-x:auto;overscroll-behavior-x:contain;background:#fff}.journey-frame{position:relative;aspect-ratio:1536/570;width:100%;min-width:900px;overflow:hidden}.journey-poster{position:absolute;top:0;left:0;display:block;width:100%;max-width:none;height:auto;transform:translateY(-22.94921875%)}#journey-art{position:relative;width:100%;height:auto;display:block}#journey-art[hidden]{display:none}.journey-poster{opacity:1}.academic-journey.is-ready .journey-poster{opacity:0;pointer-events:none}.journey-controls{display:flex;gap:12px;align-items:center;padding:14px 0 0}.journey-controls[hidden]{display:none}.journey-controls button{font:inherit;font-size:13px;color:var(--green);background:transparent;border:1px solid var(--green);padding:8px 14px;min-height:40px;cursor:pointer}.journey-controls button:hover{background:var(--gold)}.journey-controls input{flex:1;min-width:40px;accent-color:var(--green)}.journey-controls output{font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--green)}.journey-scroll-hint{display:none;font-size:12px;margin:10px 0 0;color:var(--ink)}
-@media(max-width:1000px){.journey-scroll-hint{display:block}.journey-heading h1{font-size:30px}.journey-controls{gap:8px}.journey-controls button{padding:8px 10px}}
-@media print{.journey-controls,.journey-scroll-hint,#journey-art{display:none!important}.academic-journey .journey-poster{opacity:1}.journey-frame{min-width:0}.journey-scroll{overflow:visible}}
+.academic-journey{width:min(100%,960px);margin:22px auto 32px;padding:0;border:0;background:transparent;mix-blend-mode:multiply}
+.journey-scroll{background:transparent;overflow:visible}
+.journey-frame{position:relative;aspect-ratio:1536/570;width:100%;overflow:hidden}
+.journey-poster{position:absolute;top:0;left:0;display:block;width:100%;max-width:none;height:auto;transform:translateY(-22.94921875%)}
+#journey-art{position:relative;width:100%;height:auto;display:block}#journey-art[hidden]{display:none}
+.academic-journey.is-ready .journey-poster{opacity:0;pointer-events:none}
+@media(max-width:760px){.journey-heading h1{font-size:30px}.academic-journey{margin:20px auto 26px}}
+@media print{#journey-art{display:none!important}.academic-journey .journey-poster{opacity:1}}
