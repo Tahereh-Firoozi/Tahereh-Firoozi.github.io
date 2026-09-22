@@ -126,3 +126,25 @@ h1,h2,h3{letter-spacing:-.02em}
  .research-focus h2{font-size:21px}.focus-keywords li{font-size:14px}
 }
 @media print{.page-intro{background:none;padding:0}.page-intro h1,.page-intro>p{color:#2B292A}.university-mark{display:none}}
+
+/* A quiet, shared university footer; the official mark retains its clear space. */
+.site-header .header-inner{min-height:100px;gap:0}
+.site-header .site-identity{padding:22px 0;gap:12px}
+.site-footer{margin:0;background:var(--paper);border-top:2px solid var(--green)}
+.site-footer .footer-inner{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:40px;max-width:1320px;min-height:112px;margin:0 auto;padding:34px 40px}
+.site-footer .university-mark{margin:0;flex:0 0 auto}
+.site-footer .university-mark img{width:148px;height:auto}
+.site-footer .footer-copyright{margin:0;font-size:12px;line-height:1.5;color:var(--green)}
+@media(min-width:701px){.page{min-height:calc(100svh - 114px)}.profile{padding-top:28px}}
+@media(max-width:700px){.site-footer .footer-inner{padding:34px;gap:34px;flex-wrap:wrap}.site-footer .footer-copyright{font-size:11px}.site-header .site-identity{padding:16px 0}.profile{padding-top:26px}}
+/* Book covers sit beside, rather than above, their chapter citations. */
+.publication.record-with-cover:not([hidden]){display:grid;grid-template-columns:112px minmax(0,1fr);gap:28px;align-items:start}
+.chapter-details{min-width:0}
+.book-cover{display:block;width:112px;line-height:0;border:0!important;transition:transform .18s ease;box-shadow:0 3px 10px #2b292a16}
+.book-cover img{display:block;width:100%;height:auto;max-height:174px;object-fit:contain}
+.book-cover:hover{transform:translateY(-3px)}
+.book-cover:focus-visible{outline:3px solid var(--green);outline-offset:6px}
+@media(max-width:600px){.publication.record-with-cover:not([hidden]){grid-template-columns:78px minmax(0,1fr);gap:18px}.book-cover{width:78px}.book-cover img{max-height:125px}}
+@media(prefers-reduced-motion:reduce){.book-cover{transition:none}.book-cover:hover{transform:none}}
+
+@media(min-width:1101px) and (max-height:760px){.intro{padding-top:14px;padding-bottom:14px}.content{padding-bottom:16px}.intro p{margin-bottom:18px}}
