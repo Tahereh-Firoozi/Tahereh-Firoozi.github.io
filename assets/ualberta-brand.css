@@ -148,3 +148,15 @@ h1,h2,h3{letter-spacing:-.02em}
 @media(prefers-reduced-motion:reduce){.book-cover{transition:none}.book-cover:hover{transform:none}}
 
 @media(min-width:1101px) and (max-height:760px){.intro{padding-top:14px;padding-bottom:14px}.content{padding-bottom:16px}.intro p{margin-bottom:18px}}
+
+/* Deep green footer with the university's official reversed white mark. */
+.site-footer{background:var(--green)}
+.site-footer .footer-copyright{color:var(--paper)}
+.site-footer a:focus-visible{outline-color:var(--gold)}
+/* Chapter covers align with the page edge; citation text keeps a shared column. */
+@media(min-width:761px){
+ .publication-year{display:block}
+ .publication-year>.year-label{margin-bottom:24px}
+ .publication-year .publication{margin-left:140px}
+ .publication-year .publication.record-with-cover{margin-left:0}
+}
