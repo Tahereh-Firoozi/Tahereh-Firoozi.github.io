@@ -17,3 +17,23 @@
  .filterbar .filter-field select{width:100%;max-width:100%;font-size:13px}
  .filterbar .reset-button{align-self:flex-end;padding:8px;flex:0 0 auto}
 }
+
+/* A dedicated search column beside the academic record. */
+.search-layout{padding-bottom:32px}
+.search-results{min-width:0}
+.search-sidebar{min-width:0}
+.search-sidebar .filterbar{padding:0;border:0;margin:0 0 24px}
+@media(min-width:901px){
+ .js .search-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;align-items:start}
+ .js .search-sidebar{position:sticky;top:150px;max-height:calc(100svh - 174px);overflow-y:auto;padding:4px 22px 4px 4px;border-right:1px solid var(--line)}
+ .search-sidebar .filterbar{display:flex;flex-direction:column;align-items:stretch;gap:20px}
+ .search-sidebar .filterbar .filter-field,.search-sidebar .filterbar .filter-field:not(.search-field){flex:0 0 auto;flex-direction:column;align-items:stretch;width:100%;max-width:none;gap:8px}
+ .search-sidebar .filterbar .search-field{margin:0}
+ .search-sidebar .filterbar .search-field input{font-size:16px;padding-left:36px;padding-right:8px;background-position:10px center;background-size:16px;min-height:50px}
+ .search-sidebar .filterbar .filter-field select{width:100%;max-width:100%}
+ .search-sidebar .filterbar .reset-button{margin:0;align-self:flex-start;padding:8px 0}
+ .search-results .year-group{display:block}
+ .search-results .year-label{margin-bottom:24px}
+ .search-results .manuscripts-section .record{margin-left:0}
+}
+@media print{.search-sidebar{display:none}.search-layout{display:block}}
