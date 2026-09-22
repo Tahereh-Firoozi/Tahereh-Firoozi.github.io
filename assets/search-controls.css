@@ -1,0 +1,19 @@
+/* Search is primary; optional filters form a quiet secondary row. */
+.filterbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:0 0 20px;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;margin-bottom:12px}
+.filterbar .search-field{flex:1 0 100%;min-width:0;max-width:none;gap:10px;margin-bottom:4px}
+.filterbar .search-field>span{font-size:14px;font-weight:500;letter-spacing:0}
+.filterbar .search-field input{min-height:54px;font-size:16px;line-height:1.5;padding:13px 16px 13px 48px;border:1px solid var(--green);background:var(--paper) url("search.svg") 17px center / 19px 19px no-repeat;border-radius:0}
+.filterbar .filter-field:not(.search-field){display:flex;flex-direction:row;align-items:center;gap:9px;flex:0 1 auto;min-width:0;max-width:none}
+.filterbar .filter-field:not(.search-field)>span{font-size:12px;font-weight:400;letter-spacing:0}
+.filterbar .filter-field select{min-height:42px;width:auto;max-width:260px;padding:8px 28px 8px 10px;font-size:13px;border-color:var(--line);background:var(--paper);border-radius:0}
+.filterbar .reset-button{margin-left:auto;padding:8px 0;min-height:44px;font-size:12px;text-decoration:none}
+.filterbar .reset-button:hover{text-decoration:underline}
+.filterbar input:focus-visible,.filterbar select:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.results-bar{margin-bottom:18px}
+@media(max-width:600px){
+ .filterbar{gap:10px 16px}
+ .filterbar .search-field input{font-size:16px;min-height:52px;padding-left:42px;background-position:14px center;background-size:17px}
+ .filterbar .filter-field:not(.search-field){flex:1 1 130px;max-width:100%;flex-direction:column;align-items:stretch;gap:5px}
+ .filterbar .filter-field select{width:100%;max-width:100%;font-size:13px}
+ .filterbar .reset-button{align-self:flex-end;padding:8px;flex:0 0 auto}
+}
