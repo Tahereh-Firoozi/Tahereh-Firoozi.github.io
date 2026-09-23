@@ -1,5 +1,5 @@
 .journey-heading{margin:32px 0 12px}.journey-heading h1{font-size:36px;line-height:1.15;color:var(--green);margin:0}.journey-heading p{font-size:16px;line-height:1.6;margin:12px 0 0;color:var(--ink)}
-.academic-journey{width:min(100%,960px);margin:22px auto 32px;padding:0;border:0;background:transparent;mix-blend-mode:multiply}
+.academic-journey{width:min(100%,760px);margin:22px auto 32px;padding:0;border:0;background:transparent;mix-blend-mode:multiply}
 .journey-scroll{background:transparent;overflow:visible}
 .journey-frame{position:relative;aspect-ratio:1536/570;width:100%;overflow:hidden}
 .journey-poster{position:absolute;top:0;left:0;display:block;width:100%;max-width:none;height:auto;transform:translateY(-22.94921875%)}
