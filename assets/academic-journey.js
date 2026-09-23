@@ -5,10 +5,10 @@ const ctx=c.getContext('2d'),section=c.closest('.academic-journey');
 if(!ctx)return;
 const image=new Image(),reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const parts=[
-[35,250,315,65,0,1,0],[35,310,132,125,0,1.2,0],
-[166,330,386,182,1,2,1],
-[35,715,385,77,3,1,0],[35,585,123,127,3,1.2,0],
-[157,517,395,188,4,2,1],
+[35,310,315,50,0,1,0],[35,365,132,125,0,1.2,0],
+[166,400,386,112,1,2,1],
+[35,647,385,77,3,1,0],[35,525,125,120,3,1.2,0],
+[160,517,392,90,4,2,1],
 [552,465,165,100,6,1.6,1],[532,565,200,68,7,1,0],
 [717,501,215,28,8,1.5,1],[928,480,74,73,9.5,1,0],
 [948,417,30,67,9.5,1,0],[825,335,295,80,9.5,1,0],
@@ -18,7 +18,7 @@ const parts=[
 [1462,475,74,73,15,2,1]];
 let t=0,last=0,started=false,raf=0;
 function draw(){
-ctx.setTransform(1,0,0,1,0,-235);ctx.clearRect(0,235,1536,570);
+ctx.setTransform(1,0,0,1,0,-300);ctx.clearRect(0,300,1536,430);
 if(t>=17.1){ctx.drawImage(image,0,0,1536,1024);return}
 for(const [x,y,w,h,start,dur,mode] of parts){
 const f=Math.max(0,Math.min(1,(t-start)/dur));if(!f)continue;
@@ -37,5 +37,5 @@ if('IntersectionObserver' in window){const observer=new IntersectionObserver(ent
 };
 reduce.addEventListener('change',()=>{if(reduce.matches){cancelAnimationFrame(raf);t=18;if(image.complete)draw()}});
 document.addEventListener('visibilitychange',()=>{last=0});
-image.src='assets/academic-journey.webp';
+image.src='assets/academic-journey-compact.webp';
 })();
