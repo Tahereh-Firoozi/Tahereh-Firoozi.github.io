@@ -4,3 +4,6 @@
 .presentations-sketch img{position:absolute;left:50%;top:50%;width:760px;max-width:none;height:auto;transform:translate(-50%,-50%)}
 @media(max-width:760px){.page-intro.presentations-banner{padding:24px;gap:12px;min-height:0}.presentations-banner h1{font-size:30px}.presentations-sketch{width:150px;height:105px;flex-basis:150px}.presentations-sketch img{width:440px}}
 @media(max-width:440px){.page-intro.presentations-banner{padding:20px 18px;flex-wrap:wrap}.presentations-banner h1{font-size:27px}.presentations-sketch{flex-basis:150px;margin-left:auto}}
+
+/* Remove the green raster field at render time, revealing the exact banner colour. */
+.presentations-sketch img{filter:url(#presentation-linework)}
