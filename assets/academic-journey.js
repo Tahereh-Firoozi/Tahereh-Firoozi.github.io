@@ -25,7 +25,7 @@ const f=Math.max(0,Math.min(1,(t-start)/dur));if(!f)continue;
 ctx.save();ctx.beginPath();ctx.rect(x,y,mode?w*f:w,h);ctx.clip();ctx.globalAlpha=mode?1:f;ctx.drawImage(image,0,0,1536,1024);ctx.restore();
 }}
 function frame(now){
-if(last)t=Math.min(18,t+(now-last)/1000);
+if(last)t=Math.min(18,t+2*(now-last)/1000);
 last=now;draw();if(t<18)raf=requestAnimationFrame(frame);
 }
 function start(){if(started)return;started=true;raf=requestAnimationFrame(frame)}
