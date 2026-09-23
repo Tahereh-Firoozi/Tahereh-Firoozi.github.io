@@ -1,12 +1,16 @@
-.journey-heading{margin:32px 0 12px}.journey-heading h1{font-size:36px;line-height:1.15;color:var(--green);margin:0}.journey-heading p{font-size:16px;line-height:1.6;margin:12px 0 0;color:var(--ink)}
-.academic-journey{width:min(100%,760px);margin:22px auto 32px;padding:0;border:0;background:transparent;mix-blend-mode:multiply}
-.journey-scroll{background:transparent;overflow:visible}
-.journey-frame{position:relative;aspect-ratio:1536/430;width:100%;overflow:hidden}
-.journey-poster{position:absolute;top:0;left:0;display:block;width:100%;max-width:none;height:auto;transform:translateY(-29.296875%)}
-#journey-art{position:relative;width:100%;height:auto;display:block}#journey-art[hidden]{display:none}
-.academic-journey.is-ready .journey-poster{opacity:0;pointer-events:none}
-@media(max-width:760px){.journey-heading h1{font-size:30px}.academic-journey{margin:20px auto 26px}}
-@media print{#journey-art{display:none!important}.academic-journey .journey-poster{opacity:1}}
-
-.journey-labels{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}
-@media print{.journey-nlp-label{opacity:1!important}}
+.journey-banner .academic-journey{width:min(100%,760px);margin:24px auto 0;background:none}
+.journey-vector{display:block;width:100%;height:auto;overflow:visible;color:#F5F5F5}
+.journey-vector text{font-size:24px;font-weight:400;fill:#F5F5F5;stroke:none}
+.journey-vector path,.journey-vector circle,.journey-vector rect{fill:none;stroke:#F5F5F5;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.journey-vector .node,.journey-vector .node circle{fill:#F5F5F5}
+.journey-vector .gold-fill,.journey-vector .gold-fill rect{fill:#F2CD00;stroke:#F2CD00}
+.journey-vector .journey-continuation{stroke:#F2CD00;stroke-dasharray:10 10}
+.academic-journey.is-ready .journey-step{opacity:0}
+.academic-journey.is-ready .journey-draw{stroke-dasharray:1;stroke-dashoffset:1}
+.academic-journey.is-running .journey-step{animation:journey-appear var(--duration,.5s) ease var(--delay,0s) both}
+.academic-journey.is-running .journey-draw{animation:journey-line var(--duration,.7s) ease var(--delay,0s) both}
+@keyframes journey-appear{from{opacity:0}to{opacity:1}}
+@keyframes journey-line{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.academic-journey .journey-step{opacity:1!important;animation:none!important}.academic-journey .journey-draw{stroke-dashoffset:0!important;animation:none!important}}
+@media(max-width:760px){.journey-banner .academic-journey{margin-top:20px}}
+@media print{.journey-banner{background:#275D38!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.journey-banner h1{color:#F5F5F5!important}.academic-journey .journey-step{opacity:1!important;animation:none!important}.academic-journey .journey-draw{stroke-dashoffset:0!important;animation:none!important}}
