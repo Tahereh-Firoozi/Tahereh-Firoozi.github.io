@@ -1,21 +1,2 @@
-/* Geometric page accents: a quiet turn on arrival, without moving content. */
-.profile::before,.page-intro::after,.brand-monogram::after{
- transform-origin:center;
- pointer-events:none;
-}
-@media(prefers-reduced-motion:no-preference){
- @keyframes accent-turn{
-  0%,12%{transform:rotate(0deg) scale(1)}
-  38%{transform:rotate(90deg) scale(.68);border-radius:18%}
-  62%{transform:rotate(180deg) scale(.68);border-radius:18%}
-  88%,100%{transform:rotate(180deg) scale(1);border-radius:0}
- }
- .profile::before,.page-intro::after{animation:accent-turn 4.8s ease-in-out both}
- .brand-monogram::after{animation:accent-turn 4.8s ease-in-out both}
-}
-@media(prefers-reduced-motion:reduce){
- .profile::before,.page-intro::after,.brand-monogram::after{animation:none!important;transform:none}
-}
-@media print{
- .profile::before,.page-intro::after,.brand-monogram::after{animation:none!important;transform:none}
-}
+/* Decorative animated squares removed across all pages. */
+.profile::before,.page-intro::after,.brand-monogram::after{content:none!important;display:none!important;animation:none!important}
