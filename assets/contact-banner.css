@@ -1,0 +1,6 @@
+.page-intro.contact-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 36px;min-height:202px}
+.contact-banner h1{margin:0}
+.contact-sketch{position:relative;width:320px;height:174px;flex:0 0 320px;overflow:hidden}
+.contact-sketch img{position:absolute;left:50%;top:50%;width:720px;max-width:none;height:auto;transform:translate(-53%,-46%);filter:url(#contact-linework)}
+@media(max-width:760px){.page-intro.contact-banner{padding:24px;gap:12px;min-height:0}.page-intro.contact-banner h1{font-size:30px}.contact-sketch{width:150px;height:105px;flex-basis:150px}.contact-sketch img{width:380px}}
+@media(max-width:440px){.page-intro.contact-banner{padding:20px 18px;flex-wrap:wrap}.page-intro.contact-banner h1{font-size:27px}.contact-sketch{margin-left:auto}}
