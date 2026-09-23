@@ -1,0 +1,6 @@
+.page-intro.teaching-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 36px;min-height:202px}
+.teaching-banner h1{margin:0}
+.teaching-sketch{position:relative;width:320px;height:174px;flex:0 0 320px;overflow:hidden}
+.teaching-sketch img{position:absolute;left:50%;top:50%;width:720px;max-width:none;height:auto;transform:translate(-50%,-48%);filter:url(#teaching-linework)}
+@media(max-width:760px){.page-intro.teaching-banner{padding:24px;gap:12px;min-height:0}.page-intro.teaching-banner h1{font-size:30px}.teaching-sketch{width:150px;height:105px;flex-basis:150px}.teaching-sketch img{width:350px}}
+@media(max-width:440px){.page-intro.teaching-banner{padding:20px 18px;flex-wrap:wrap}.page-intro.teaching-banner h1{font-size:27px}.teaching-sketch{margin-left:auto}}
