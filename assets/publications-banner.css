@@ -1,0 +1,6 @@
+.page-intro.publications-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 36px;min-height:202px}
+.publications-banner h1{margin:0}
+.publications-sketch{position:relative;width:340px;height:166px;flex:0 1 340px;overflow:hidden;mask-image:radial-gradient(ellipse at center,#000 85%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse at center,#000 85%,transparent 100%)}
+.publications-sketch img{position:absolute;left:50%;top:50%;width:600px;max-width:none;height:auto;transform:translate(-50%,-50%)}
+@media(max-width:760px){.page-intro.publications-banner{padding:24px;gap:12px;min-height:0}.publications-banner h1{font-size:30px}.publications-sketch{width:150px;height:100px;flex-basis:150px}.publications-sketch img{width:340px}}
+@media(max-width:440px){.page-intro.publications-banner{padding:20px 18px}.publications-banner h1{font-size:27px}.publications-sketch{flex-basis:100px;height:90px}.publications-sketch img{width:260px}}
