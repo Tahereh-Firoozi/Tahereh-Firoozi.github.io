@@ -26,11 +26,3 @@
 .journey-banner .academic-journey{width:100%;margin:0}
 .journey-banner .journey-vector{height:82px}
 }
-
-/* Reflow labels and stretch paths to use the banner's horizontal space. */
-.journey-banner .journey-vector text{font-size:32px}
-.page-intro.journey-banner{gap:24px;padding-left:28px;padding-right:28px}
-.journey-banner h1{font-size:36px}
-@media(max-width:760px){.journey-banner h1{font-size:30px}}
-
-@media(min-width:761px){.page-intro.journey-banner{width:calc(100% + 32px);margin-left:-16px;margin-right:-16px}}
