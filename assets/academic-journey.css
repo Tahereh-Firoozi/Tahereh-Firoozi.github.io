@@ -7,3 +7,6 @@
 .academic-journey.is-ready .journey-poster{opacity:0;pointer-events:none}
 @media(max-width:760px){.journey-heading h1{font-size:30px}.academic-journey{margin:20px auto 26px}}
 @media print{#journey-art{display:none!important}.academic-journey .journey-poster{opacity:1}}
+
+.journey-labels{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}
+@media print{.journey-nlp-label{opacity:1!important}}

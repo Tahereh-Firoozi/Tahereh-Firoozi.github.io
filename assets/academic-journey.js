@@ -18,6 +18,7 @@ const parts=[
 [1462,475,74,73,15,2,1]];
 let t=0,last=0,started=false,raf=0;
 function draw(){
+section.querySelector('.journey-nlp-label').style.opacity=Math.max(0,Math.min(1,(t-6)/1.6));
 ctx.setTransform(1,0,0,1,0,-300);ctx.clearRect(0,300,1536,430);
 if(t>=17.1){ctx.drawImage(image,0,0,1536,1024);return}
 for(const [x,y,w,h,start,dur,mode] of parts){
@@ -25,7 +26,7 @@ const f=Math.max(0,Math.min(1,(t-start)/dur));if(!f)continue;
 ctx.save();ctx.beginPath();ctx.rect(x,y,mode?w*f:w,h);ctx.clip();ctx.globalAlpha=mode?1:f;ctx.drawImage(image,0,0,1536,1024);ctx.restore();
 }}
 function frame(now){
-if(last)t=Math.min(18,t+2*(now-last)/1000);
+if(last)t=Math.min(18,t+(18/5)*(now-last)/1000);
 last=now;draw();if(t<18)raf=requestAnimationFrame(frame);
 }
 function start(){if(started)return;started=true;raf=requestAnimationFrame(frame)}
