@@ -15,14 +15,15 @@
 @media(max-width:760px){.journey-banner .academic-journey{margin-top:20px}}
 @media print{.journey-banner{background:#275D38!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.journey-banner h1{color:#F5F5F5!important}.academic-journey .journey-step{opacity:1!important;animation:none!important}.academic-journey .journey-draw{stroke-dashoffset:0!important;animation:none!important}}
 
-/* Keep the original full-width, compact banner; fit artwork within it. */
-.page-intro.journey-banner{display:flex;align-items:center;justify-content:space-between;gap:28px;height:154px;padding:18px 36px}
+
+/* Enlarge the existing artwork proportionally, with room inside the banner. */
+.page-intro.journey-banner{display:flex;align-items:center;justify-content:space-between;gap:28px;height:auto;padding:24px 28px;width:calc(100% + 32px);margin-left:-16px;margin-right:-16px}
 .journey-banner h1{flex:0 0 auto;margin:0}
 .journey-banner .academic-journey{flex:1;min-width:0;width:auto;margin:0}
-.journey-banner .journey-vector{width:100%;height:118px;overflow:hidden}
+.journey-banner .journey-vector{display:block;width:100%;height:auto;aspect-ratio:1536/430;overflow:visible}
 @media(max-width:760px){
-.page-intro.journey-banner{display:grid;grid-template-rows:34px 82px;gap:6px;height:154px;padding:16px 24px}
-.journey-banner h1{font-size:30px;line-height:34px}
-.journey-banner .academic-journey{width:100%;margin:0}
-.journey-banner .journey-vector{height:82px}
+.page-intro.journey-banner{display:block;width:100%;margin-left:0;margin-right:0;padding:24px;height:auto}
+.journey-banner h1{font-size:30px;line-height:1.15}
+.journey-banner .academic-journey{width:100%;margin:20px 0 0}
+.journey-banner .journey-vector{width:100%;height:auto}
 }
